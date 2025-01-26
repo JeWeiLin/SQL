@@ -105,12 +105,13 @@ group by teacher_id;
 
 ## Problem 1741
 Table: `Players`
-ˋˋˋ
+```
 +---------------+------+
 | Column Name   | Type |
 +---------------+------+
 | player_id     | int  |
 | group_id      | int  |
-+---------------+------+`
++---------------+------+
 player_id is the primary key (column with unique values) of this table.  
-Each row of this table indicates the group of each player.ˋˋˋ
+Each row of this table indicates the group of each player.
+```
