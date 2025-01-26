@@ -58,6 +58,7 @@ insert into Teacher (teacher_id, subject_id, dept_id) values ('2', '2', '1');
 insert into Teacher (teacher_id, subject_id, dept_id) values ('2', '3', '1');
 insert into Teacher (teacher_id, subject_id, dept_id) values ('2', '4', '1');
 
+# Write your MySQL query statement below
 select teacher_id, count(distinct subject_id) as cnt from Teacher
 group by teacher_id;
 ```

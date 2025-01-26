@@ -53,6 +53,7 @@ insert into Employees (emp_id, event_day, in_time, out_time) values ('1', '2020-
 insert into Employees (emp_id, event_day, in_time, out_time) values ('2', '2020-11-28', '3', '33');
 insert into Employees (emp_id, event_day, in_time, out_time) values ('2', '2020-12-9', '47', '74');
 
+# Write your MySQL query statement below
 select event_day as day, emp_id, sum(out_time-in_time) as total_time from Employees
 group by emp_id, event_day;
 ```

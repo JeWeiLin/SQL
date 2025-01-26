@@ -44,6 +44,7 @@ insert into Products (product_id, low_fats, recyclable) values ('2', 'N', 'Y');
 insert into Products (product_id, low_fats, recyclable) values ('3', 'Y', 'Y');
 insert into Products (product_id, low_fats, recyclable) values ('4', 'N', 'N');
 
+# Write your MySQL query statement below
 select product_id from Products
 where low_fats='Y' and recyclable='Y';
 ```
