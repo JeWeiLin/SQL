@@ -7,9 +7,11 @@ Table: Products
 | low_fats    | enum    |
 | recyclable  | enum    |
 
-product_id is the primary key (column with unique values) for this table.\\
-low_fats is an ENUM (category) of type ('Y', 'N') where 'Y' means this product is low fat and 'N' means it is not.\\
-recyclable is an ENUM (category) of types ('Y', 'N') where 'Y' means this product is recyclable and 'N' means it is not.\\
+product_id is the primary key (column with unique values) for this table.
+
+low_fats is an ENUM (category) of type ('Y', 'N') where 'Y' means this product is low fat and 'N' means it is not.
+
+recyclable is an ENUM (category) of types ('Y', 'N') where 'Y' means this product is recyclable and 'N' means it is not.
 
 Example 1:
 
@@ -102,3 +104,13 @@ select teacher_id, count(distinct subject_id) as cnt from Teacher
 group by teacher_id;
 
 ## Problem 1741
+Table: `Players`
+ˋˋˋ
++---------------+------+
+| Column Name   | Type |
++---------------+------+
+| player_id     | int  |
+| group_id      | int  |
++---------------+------+`
+player_id is the primary key (column with unique values) of this table.  
+Each row of this table indicates the group of each player.ˋˋˋ
