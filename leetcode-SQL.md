@@ -13,11 +13,10 @@ low_fats is an ENUM (category) of type ('Y', 'N') where 'Y' means this product i
 recyclable is an ENUM (category) of types ('Y', 'N') where 'Y' means this product is recyclable and 'N' means it is not.
 ```
 
-Example 1:
-
-Input: 
-Products `table`:
 ```
+Input: 
+Products table:
+
 | product_id  | low_fats | recyclable |
 |-------------|----------|------------|
 | 0           | Y        | N          |
@@ -25,6 +24,7 @@ Products `table`:
 | 2           | N        | Y          |
 | 3           | Y        | Y          |
 | 4           | N        | N          |
+
 Output: 
 
 | product_id  |
@@ -50,8 +50,9 @@ where low_fats='Y' and recyclable='Y';
 
 
 ## Problem 2356
-Table: `Teacher`
 ```
+Table: Teacher
+
 +-------------+------+
 | Column Name | Type |
 +-------------+------+
@@ -63,11 +64,10 @@ Table: `Teacher`
 Each row in this table indicates that the teacher with teacher_id teaches the subject subject_id in the department dept_id.
 ```
 
-Example 1:
-
-Input: 
-Teacher `table`:
 ```
+Input: 
+Teacher table:
+
 +------------+------------+---------+
 | teacher_id | subject_id | dept_id |
 +------------+------------+---------+
@@ -79,6 +79,7 @@ Teacher `table`:
 | 2          | 3          | 1       |
 | 2          | 4          | 1       |
 +------------+------------+---------+
+
 Output:  
 +------------+-----+
 | teacher_id | cnt |
@@ -113,8 +114,9 @@ group by teacher_id;
 ```
 
 ## Problem 1741
-Table: `Players`
 ```
+Table: Players
+
 +---------------+------+
 | Column Name   | Type |
 +---------------+------+
