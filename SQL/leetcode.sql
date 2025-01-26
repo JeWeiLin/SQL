@@ -1,149 +1,151 @@
 use leetcode;
 
 ## Problem 1757
-Create table If Not Exists Products (product_id int, low_fats ENUM('Y', 'N'), recyclable ENUM('Y','N'));
-insert into Products (product_id, low_fats, recyclable) values ('0', 'Y', 'N');
-insert into Products (product_id, low_fats, recyclable) values ('1', 'Y', 'Y');
-insert into Products (product_id, low_fats, recyclable) values ('2', 'N', 'Y');
-insert into Products (product_id, low_fats, recyclable) values ('3', 'Y', 'Y');
-insert into Products (product_id, low_fats, recyclable) values ('4', 'N', 'N');
+CREATE TABLE IF NOT EXISTS Products (product_id INT, low_fats ENUM('Y', 'N'), recyclable ENUM('Y', 'N'));
+INSERT INTO Products (product_id, low_fats, recyclable) VALUES ('0', 'Y', 'N');
+INSERT INTO Products (product_id, low_fats, recyclable) VALUES ('1', 'Y', 'Y');
+INSERT INTO Products (product_id, low_fats, recyclable) VALUES ('2', 'N', 'Y');
+INSERT INTO Products (product_id, low_fats, recyclable) VALUES ('3', 'Y', 'Y');
+INSERT INTO Products (product_id, low_fats, recyclable) VALUES ('4', 'N', 'N');
 
-select product_id from Products
-where low_fats='Y' and recyclable='Y';
+SELECT product_id FROM Products
+WHERE low_fats = 'Y' AND recyclable = 'Y';
 
 ## Problem 2356
-Create table If Not Exists Teacher (teacher_id int, subject_id int, dept_id int);
-insert into Teacher (teacher_id, subject_id, dept_id) values ('1', '2', '3');
-insert into Teacher (teacher_id, subject_id, dept_id) values ('1', '2', '4');
-insert into Teacher (teacher_id, subject_id, dept_id) values ('1', '3', '3');
-insert into Teacher (teacher_id, subject_id, dept_id) values ('2', '1',leetcode '1');
-insert into Teacher (teacher_id, subject_id, dept_id) values ('2', '2', '1');
-insert into Teacher (teacher_id, subject_id, dept_id) values ('2', '3', '1');
-insert into Teacher (teacher_id, subject_id, dept_id) values ('2', '4', '1');
+CREATE TABLE IF NOT EXISTS Teacher (teacher_id INT, subject_id INT, dept_id INT);
+INSERT INTO Teacher (teacher_id, subject_id, dept_id) VALUES ('1', '2', '3');
+INSERT INTO Teacher (teacher_id, subject_id, dept_id) VALUES ('1', '2', '4');
+INSERT INTO Teacher (teacher_id, subject_id, dept_id) VALUES ('1', '3', '3');
+INSERT INTO Teacher (teacher_id, subject_id, dept_id) VALUES ('2', '1', '1');
+INSERT INTO Teacher (teacher_id, subject_id, dept_id) VALUES ('2', '2', '1');
+INSERT INTO Teacher (teacher_id, subject_id, dept_id) VALUES ('2', '3', '1');
+INSERT INTO Teacher (teacher_id, subject_id, dept_id) VALUES ('2', '4', '1');
 
-select teacher_id, count(distinct subject_id) as cnt from Teacher
-group by teacher_id;
+SELECT teacher_id, COUNT(DISTINCT subject_id) AS cnt FROM Teacher
+GROUP BY teacher_id;
 
 ## Problem 1741
-Create table If Not Exists Employees(emp_id int, event_day date, in_time int, out_time int);
-insert into Employees (emp_id, event_day, in_time, out_time) values ('1', '2020-11-28', '4', '32');
-insert into Employees (emp_id, event_day, in_time, out_time) values ('1', '2020-11-28', '55', '200');
-insert into Employees (emp_id, event_day, in_time, out_time) values ('1', '2020-12-3', '1', '42');
-insert into Employees (emp_id, event_day, in_time, out_time) values ('2', '2020-11-28', '3', '33');
-insert into Employees (emp_id, event_day, in_time, out_time) values ('2', '2020-12-9', '47', '74');
+CREATE TABLE IF NOT EXISTS Employees (emp_id INT, event_day DATE, in_time INT, out_time INT);
+INSERT INTO Employees (emp_id, event_day, in_time, out_time) VALUES ('1', '2020-11-28', '4', '32');
+INSERT INTO Employees (emp_id, event_day, in_time, out_time) VALUES ('1', '2020-11-28', '55', '200');
+INSERT INTO Employees (emp_id, event_day, in_time, out_time) VALUES ('1', '2020-12-3', '1', '42');
+INSERT INTO Employees (emp_id, event_day, in_time, out_time) VALUES ('2', '2020-11-28', '3', '33');
+INSERT INTO Employees (emp_id, event_day, in_time, out_time) VALUES ('2', '2020-12-9', '47', '74');
 
-select event_day as day, emp_id, sum(out_time-in_time) as total_time from Employees
-group by emp_id, event_day;
+SELECT event_day AS day, emp_id, SUM(out_time - in_time) AS total_time FROM Employees
+GROUP BY emp_id, event_day;
+
 
 ## Problem 1693
-Create table If Not Exists DailySales(date_id date, make_name varchar(20), lead_id int, partner_id int);
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-8', 'toyota', '0', '1');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-8', 'toyota', '1', '0');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-8', 'toyota', '1', '2');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-7', 'toyota', '0', '2');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-7', 'toyota', '0', '1');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-8', 'honda', '1', '2');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-8', 'honda', '2', '1');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-7', 'honda', '0', '1');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-7', 'honda', '1', '2');
-insert into DailySales (date_id, make_name, lead_id, partner_id) values ('2020-12-7', 'honda', '2', '1');
+CREATE TABLE IF NOT EXISTS DailySales (date_id DATE, make_name VARCHAR(20), lead_id INT, partner_id INT);
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-8', 'toyota', '0', '1');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-8', 'toyota', '1', '0');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-8', 'toyota', '1', '2');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-7', 'toyota', '0', '2');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-7', 'toyota', '0', '1');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-8', 'honda', '1', '2');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-8', 'honda', '2', '1');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-7', 'honda', '0', '1');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-7', 'honda', '1', '2');
+INSERT INTO DailySales (date_id, make_name, lead_id, partner_id) VALUES ('2020-12-7', 'honda', '2', '1');
 
-select date_id, make_name, count(distinct lead_id) as unique_leads, count(distinct partner_id) as unique_partners from DailySales
-group by date_id, make_name;
+SELECT date_id, make_name, COUNT(DISTINCT lead_id) AS unique_leads, COUNT(DISTINCT partner_id) AS unique_partners FROM DailySales
+GROUP BY date_id, make_name;
 
 ## Problem 1393
-Create Table If Not Exists Stocks (stock_name varchar(15), operation ENUM('Sell', 'Buy'), operation_day int, price int);
-insert into Stocks (stock_name, operation, operation_day, price) values ('Leetcode', 'Buy', '1', '1000');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Corona Masks', 'Buy', '2', '10');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Leetcode', 'Sell', '5', '9000');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Handbags', 'Buy', '17', '30000');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Corona Masks', 'Sell', '3', '1010');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Corona Masks', 'Buy', '4', '1000');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Corona Masks', 'Sell', '5', '500');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Corona Masks', 'Buy', '6', '1000');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Handbags', 'Sell', '29', '7000');
-insert into Stocks (stock_name, operation, operation_day, price) values ('Corona Masks', 'Sell', '10', '10000');
+CREATE TABLE IF NOT EXISTS Stocks (stock_name VARCHAR(15), operation ENUM('Sell', 'Buy'), operation_day INT, price INT);
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Leetcode', 'Buy', '1', '1000');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Corona Masks', 'Buy', '2', '10');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Leetcode', 'Sell', '5', '9000');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Handbags', 'Buy', '17', '30000');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Corona Masks', 'Sell', '3', '1010');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Corona Masks', 'Buy', '4', '1000');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Corona Masks', 'Sell', '5', '500');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Corona Masks', 'Buy', '6', '1000');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Handbags', 'Sell', '29', '7000');
+INSERT INTO Stocks (stock_name, operation, operation_day, price) VALUES ('Corona Masks', 'Sell', '10', '10000');
 
-select s.stock_name, s.sell_total-sum(price) as capital_gain_loss from Stocks as b
-	inner join (
-		select stock_name, sum(price) as sell_total from Stocks
-		where operation='Sell'
-		group by stock_name, operation
-    ) as s on b.stock_name = s.stock_name
-where operation='Buy'
-group by stock_name, operation;
+SELECT s.stock_name, s.sell_total - SUM(price) AS capital_gain_loss FROM Stocks AS b
+	INNER JOIN (
+		SELECT stock_name, SUM(price) AS sell_total FROM Stocks
+		WHERE operation = 'Sell'
+		GROUP BY stock_name, operation
+    ) AS s ON b.stock_name = s.stock_name
+WHERE operation = 'Buy'
+GROUP BY stock_name, operation;
 
-select stock_name, 
-	sum(
-		case when operation = 'Buy' then
+SELECT stock_name, 
+	SUM(
+		CASE WHEN operation = 'Buy' THEN
 			-price
-		else
+		ELSE
 			price
-		end
-	) as capital_gain_loss
-from Stocks
-group by stock_name;
+		END
+	) AS capital_gain_loss
+FROM Stocks
+GROUP BY stock_name;
 
-select stock_name,SUM(CASE WHEN operation = 'Sell' then price ELSE -price END) as capital_gain_loss from Stocks 
-group by stock_name;
+SELECT stock_name, SUM(CASE WHEN operation = 'Sell' THEN price ELSE -price END) AS capital_gain_loss FROM Stocks 
+GROUP BY stock_name;
 
 ## Problem 1795
 DROP TABLE IF EXISTS Products;
-Create table If Not Exists Products (product_id int, store1 varchar(10), store2 varchar(10), store3 varchar(10));
-insert into Products (product_id, store1, store2, store3) values ('0', '95', '100', '105');
-insert into Products (product_id, store1, store2, store3) values ('1', '70', 'None', '80');
+CREATE TABLE IF NOT EXISTS Products (product_id INT, store1 VARCHAR(10), store2 VARCHAR(10), store3 VARCHAR(10));
+INSERT INTO Products (product_id, store1, store2, store3) VALUES ('0', '95', '100', '105');
+INSERT INTO Products (product_id, store1, store2, store3) VALUES ('1', '70', 'None', '80');
 
 SELECT * FROM (
-	SELECT p.product_id, "store1" as store, p.store1 as price FROM Products as p
+	SELECT p.product_id, "store1" AS store, p.store1 AS price FROM Products AS p
 	UNION ALL
-	SELECT p.product_id, "store2" as store, p.store2 as price FROM Products as p
+	SELECT p.product_id, "store2" AS store, p.store2 AS price FROM Products AS p
 	UNION ALL
-	SELECT p.product_id, "store3" as store, p.store3 as price FROM Products as p
-) as r
+	SELECT p.product_id, "store3" AS store, p.store3 AS price FROM Products AS p
+) AS r
 WHERE r.price != 'None';
 
-SELECT p.product_id, "store1" as store, p.store1 as price FROM Products as p
+SELECT p.product_id, "store1" AS store, p.store1 AS price FROM Products AS p
 WHERE store1 != 'None'
 UNION ALL
-SELECT p.product_id, "store2" as store, p.store2 as price FROM Products as p
+SELECT p.product_id, "store2" AS store, p.store2 AS price FROM Products AS p
 WHERE store2 != 'None'
 UNION ALL
-SELECT p.product_id, "store3" as store, p.store3 as price FROM Products as p
+SELECT p.product_id, "store3" AS store, p.store3 AS price FROM Products AS p
 WHERE store3 != 'None';
 
 ## Problem 1683
 DROP TABLE IF EXISTS Tweets;
-Create table If Not Exists Tweets(tweet_id int, content varchar(50));
-insert into Tweets (tweet_id, content) values ('1', 'Vote for Biden');
-insert into Tweets (tweet_id, content) values ('2', 'Let us make America great again!');
+CREATE TABLE IF NOT EXISTS Tweets (tweet_id INT, content VARCHAR(50));
+INSERT INTO Tweets (tweet_id, content) VALUES ('1', 'Vote for Biden');
+INSERT INTO Tweets (tweet_id, content) VALUES ('2', 'Let us make America great again!');
 
 SELECT tweet_id FROM Tweets
 WHERE LENGTH(content) > 15;
 
 ## Problem 1587
 DROP TABLE IF EXISTS Users;
-Create table If Not Exists Users (account int, name varchar(20));
-insert into Users (account, name) values ('900001', 'Alice');
-insert into Users (account, name) values ('900002', 'Bob');
-insert into Users (account, name) values ('900003', 'Charlie');
+CREATE TABLE IF NOT EXISTS Users (account INT, name VARCHAR(20));
+INSERT INTO Users (account, name) VALUES ('900001', 'Alice');
+INSERT INTO Users (account, name) VALUES ('900002', 'Bob');
+INSERT INTO Users (account, name) VALUES ('900003', 'Charlie');
 
 DROP TABLE IF EXISTS Transactions;
-Create table If Not Exists Transactions (trans_id int, account int, amount int, transacted_on date);
-insert into Transactions (trans_id, account, amount, transacted_on) values ('1', '900001', '7000', '2020-08-01');
-insert into Transactions (trans_id, account, amount, transacted_on) values ('2', '900001', '7000', '2020-09-01');
-insert into Transactions (trans_id, account, amount, transacted_on) values ('3', '900001', '-3000', '2020-09-02');
-insert into Transactions (trans_id, account, amount, transacted_on) values ('4', '900002', '1000', '2020-09-12');
-insert into Transactions (trans_id, account, amount, transacted_on) values ('5', '900003', '6000', '2020-08-07');
-insert into Transactions (trans_id, account, amount, transacted_on) values ('6', '900003', '6000', '2020-09-07');
-insert into Transactions (trans_id, account, amount, transacted_on) values ('7', '900003', '-4000', '2020-09-11');
+CREATE TABLE IF NOT EXISTS Transactions (trans_id INT, account INT, amount INT, transacted_on DATE);
+INSERT INTO Transactions (trans_id, account, amount, transacted_on) VALUES ('1', '900001', '7000', '2020-08-01');
+INSERT INTO Transactions (trans_id, account, amount, transacted_on) VALUES ('2', '900001', '7000', '2020-09-01');
+INSERT INTO Transactions (trans_id, account, amount, transacted_on) VALUES ('3', '900001', '-3000', '2020-09-02');
+INSERT INTO Transactions (trans_id, account, amount, transacted_on) VALUES ('4', '900002', '1000', '2020-09-12');
+INSERT INTO Transactions (trans_id, account, amount, transacted_on) VALUES ('5', '900003', '6000', '2020-08-07');
+INSERT INTO Transactions (trans_id, account, amount, transacted_on) VALUES ('6', '900003', '6000', '2020-09-07');
+INSERT INTO Transactions (trans_id, account, amount, transacted_on) VALUES ('7', '900003', '-4000', '2020-09-11');
 
 SELECT r.name, r.balance FROM (
-	SELECT u.name, SUM(t.amount) as balance FROM Transactions as t
-	LEFT JOIN Users as u
+	SELECT u.name, SUM(t.amount) AS balance FROM Transactions AS t
+	LEFT JOIN Users AS u
 	ON t.account = u.account
 	GROUP BY u.name
-) as r
+) AS r
 WHERE balance > 10000;
+
 
 # Problem 627
 DROP TABLE IF EXISTS Salary;
