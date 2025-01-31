@@ -1,1 +1,1 @@
-### Leetcode SQL Practice
+### LeetCode SQL Practice
